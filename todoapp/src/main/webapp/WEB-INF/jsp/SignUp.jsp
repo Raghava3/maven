@@ -96,7 +96,8 @@ span.psw {
   </div>
 
   
+	<input type="hidden" name="module" value = "Registration">
+	<input type="hidden" name="command" value = "saveUserRegistrationDetails">
 </form>
-
 </body>
 </html>

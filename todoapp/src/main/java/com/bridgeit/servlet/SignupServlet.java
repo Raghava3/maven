@@ -21,7 +21,18 @@ public class SignupServlet extends HttpServlet
 			throws ServletException, IOException 
 			{
 		
-		String fname=req.getParameter("fname");
+		String module = req.getParameter("module");
+		System.out.println("Module Name: "+module);
+		
+		String command = req.getParameter("command");
+		System.out.println("Module Name: "+module);
+		
+		if (module.equals("Registration") && command.equals("saveUserRegistrationDetails")) {
+			Util util=new Util();
+			resp = util.register(req,resp);
+		}
+		
+		/*String fname=req.getParameter("fname");
 		String mname=req.getParameter("mname");
 		String lname=req.getParameter("lname");
 		String email=req.getParameter("email");
@@ -36,16 +47,16 @@ public class SignupServlet extends HttpServlet
 	
 		Util util=new Util();
 		Integer value=util.register(dto);
-if(	value.intValue()>0)
-{
-	System.out.println(	value.intValue());
-	  resp.sendRedirect("Login.jsp");
-}
-else
-{
-	  resp.sendRedirect("SignUp.jsp");
-
-}
+		if(	value.intValue()>0)
+		{
+			System.out.println(	value.intValue());
+			  resp.sendRedirect("Login.jsp");
+		}
+		else
+		{
+			  resp.sendRedirect("SignUp.jsp");
+		
+		}*/
 			}
 	
 	
